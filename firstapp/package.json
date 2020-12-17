@@ -1,0 +1,16 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "// create a new package by \"npm init --y\"\r // install Express JS by \"npm install express --save\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
