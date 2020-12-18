@@ -16,15 +16,20 @@ app.get("/", function(req, res){
 });
 
 // 2. Routing. // multiplle response acording to different request
-app.get("/chat", function(req, res){
+app.post("/chat", function(req, res){
     res.send("<h1>Chat</h1>");
 });
-app.get("/contact", function(req, res){
+app.put("/contact", function(req, res){
     res.send("<h1>Contact</h1>");
 });
-app.get("/profile", function(req, res){
+app.delete("/profile", function(req, res){
     res.send("<h1>Profile</h1>");
 });
+
+// 3. returning a string response
+app.get("/string", function(req, res){
+    res.send("I am a string");              // we can use "res.send()" or "res.end()"
+});                                         // send() --> position is first, end() --> position is last
 
 
 app.listen(8000, function(){
