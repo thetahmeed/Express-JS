@@ -26,11 +26,34 @@ app.delete("/profile", function(req, res){
     res.send("<h1>Profile</h1>");
 });
 
-// 3. returning a string response
+// 3. string response
 app.get("/string", function(req, res){
     res.send("I am a string");              // we can use "res.send()" or "res.end()"
-});                                         // send() --> position is first, end() --> position is last
+});                                         // send() --> before end, end() --> used to end the res
 
+// 4. manupulate status code
+app.get("/status", function(req, res){
+    res.status(401).end("Sorry. Unauthorised.");           
+});                                       
+
+// 4. JSON response
+app.get("/json", function(req, res){
+    
+    var mJSON = [
+        {
+            name: "Tahmeed",
+        email: "tahmeed@gumail.com",
+        password: "6gdj93b~!@dh990*",
+        language : {
+            bangla : "Ok",
+            english : "Ok",
+            hindi : "Osk"
+        }
+        }
+    ]
+    
+    res.json(mJSON);         
+}); 
 
 app.listen(8000, function(){
 
