@@ -15,12 +15,12 @@
 // There are FOUR things that you should know:
 
 // 1. Response
-
-// 2. Request
 //	i. Body
 //	ii. Header
 //	iii. Status
 //	iv. Cookies
+
+// 2. Request
 
 // 3. Middleware
 // 4. Database
