@@ -42,12 +42,12 @@ app.get("/json", function(req, res){
     var mJSON = [
         {
             name: "Tahmeed",
-        email: "tahmeed@gumail.com",
-        password: "6gdj93b~!@dh990*",
-        language : {
-            bangla : "Ok",
-            english : "Ok",
-            hindi : "Osk"
+            email: "tahmeed@gumail.com",
+            password: "6gdj93b~!@dh990*",
+            language : {
+                bangla : "Ok",
+                english : "Ok",
+                hindi : "Ok"
         }
         }
     ]
