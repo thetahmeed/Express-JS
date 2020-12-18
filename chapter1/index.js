@@ -39,8 +39,8 @@ app.get("/status", function(req, res){
 // 4. JSON response
 app.get("/json", function(req, res){
     
-    var mJSON = [
-        {
+    var mJSON = [ //JSON array
+        { // JSON object
             name: "Tahmeed",
             email: "tahmeed@gumail.com",
             password: "6gdj93b~!@dh990*",
@@ -48,12 +48,18 @@ app.get("/json", function(req, res){
                 bangla : "Ok",
                 english : "Ok",
                 hindi : "Ok"
-        }
+            }
         }
     ]
     
     res.json(mJSON);         
 }); 
+
+// 5. download response
+app.get("/download", function(req, res){
+    res.download("./uploads/Game.txt")         
+});      
+
 
 app.listen(8000, function(){
 
