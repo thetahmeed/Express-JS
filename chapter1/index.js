@@ -77,11 +77,16 @@ app.get("/header", function(req, res){
 }); 
 
 // 8. set Cookies
-app.get("/cookie", function(req, res){
+app.get("/cookie1", function(req, res){
     res.cookie("name", "Bond")
     res.end("Check cookie")
 }); 
 
+// 9. clear Cookies
+app.get("/cookie2", function(req, res){
+    res.clearCookie("name")
+    res.end("Check cookie")
+}); 
 
 app.listen(8000, function(){
 
