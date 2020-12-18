@@ -69,6 +69,12 @@ app.get("/link2", function(req, res){
     res.send("This is link 2")
 }); 
 
+// 7. redirect in header // all you need is a key and a value
+app.get("/header", function(req, res){
+    res.append("phone", "01700547406") // header data
+   
+    res.status(404).end("Check header")
+}); 
 
 app.listen(8000, function(){
 
