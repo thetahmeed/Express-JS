@@ -76,6 +76,13 @@ app.get("/header", function(req, res){
     res.status(404).end("Check header")
 }); 
 
+// 8. set Cookies
+app.get("/cookie", function(req, res){
+    res.cookie("name", "Bond")
+    res.end("Check cookie")
+}); 
+
+
 app.listen(8000, function(){
 
     console.log("Connected")
