@@ -60,6 +60,15 @@ app.get("/download", function(req, res){
     res.download("./uploads/Game.txt")         
 });      
 
+// 6. redirect response // here we will redirect "link1" to "link2"
+app.get("/link1", function(req, res){
+        res.redirect("http://localhost:8000/link2")
+}); 
+
+app.get("/link2", function(req, res){
+    res.send("This is link 2")
+}); 
+
 
 app.listen(8000, function(){
 
