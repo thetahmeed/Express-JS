@@ -14,12 +14,13 @@
 
 // There are FOUR things that you should know:
 
-// 1. Request
+// 1. res
 //	i. Body
 //	ii. Header
 //	iii. Status
 //	iv. Cookies
 
-// 2. Response
+// 2. req
+
 // 3. Middleware
 // 4. Database
