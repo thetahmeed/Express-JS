@@ -24,9 +24,10 @@ mApp.get("/about", mMorgan('dev'),(req, res) => {       // 3. here for a particu
 // 4. creating a self-made middleware
 function mMiddleware(req, res, next){                   // you have to send these 3 param
     if(req.url == "/middleware"){
-        res.send('alert("This page blocked by the Admin")')
+        
+    }else{
+        console.log('I am middleware 01')
     }
-
     next()                                              // you have to call "next()" at the end
 }
 
@@ -35,7 +36,25 @@ mApp.get("/middleware", mMiddleware,(req, res) => {
     res.send("Middlewaare page")
 })
 
+// 4.2 creating a self-made middleware like morgan
+function mMiddleware2(){
+    return (req, res, next) => {
+        console.log(`I am middleware two ${req.method} ${req.url}`)
+        next()
+    }
+}                  
+mApp.get("/middleware2", mMiddleware2(),(req, res) => {
+    res.send("Middlewaare page2")
+}) 
+    
+// 4.3 use all middleware
+const allMiddleware = [mMiddleware, mMiddleware2()]     // make an array and use the array
 
+mApp.get("/middleware3", allMiddleware,(req, res) => {
+    res.send("Middlewaare page3")
+}) 
+
+    
 
 mApp.listen(8080, () => {
     console.log('I am on PORT: 8080')
