@@ -54,6 +54,8 @@ mApp.get("/middleware3", allMiddleware,(req, res) => {
     res.send("Middlewaare page3")
 }) 
 
+// 4.4 some middlewares
+// http://expressjs.com/en/resources/middleware.html
     
 
 mApp.listen(8080, () => {
