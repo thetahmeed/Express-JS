@@ -6,8 +6,11 @@
 
 const mExpress = require('express')
 
-const userRouter = mExpress.Router()                    // 1. created a router from express
-const adminRouter = mExpress.Router()                   // we can use multiple router for multiple reason
+const userRouter = mExpress.Router()                    // 1. created a router from express // we can use multiple router for multiple reason                                                       
+
+
+//4.2 exporting separate router
+const adminRouter = require('./adminRouter')
 
 const mApp = mExpress();
 
@@ -28,6 +31,12 @@ mApp.use('/user', userRouter)
 mApp.get('/', (req, res) => {
     res.send("<h1>Home</h1>")
 })
+
+// 4. now we use a different file for a sub route
+// 4.1 create a new file. like: adminRouter.js and make some sub routes
+// 4.2 is writen in the top ^
+// 4.3 making linked with mApp to adminRouter
+mApp.use('/admin', adminRouter)
 
 
 mApp.listen(8080, () => {
