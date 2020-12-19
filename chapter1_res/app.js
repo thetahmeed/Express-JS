@@ -20,7 +20,11 @@ app.get("/profile", (req, res) => {
 
 // 2. creating a route
 app.get("/", (req, res) => {            // this is ROOT route and it should be in the last position
-    res.send('<h1>Hola</h1>')
+    //res.send('<h1>Hola</h1>')         // response as a HTML message
+    res.json({                          // response as a JSON
+        name: "Tahmeed",
+        meassage: "Lets shake the world"
+    })
 })
 
 // 4. creating a route for unexpested route request and it should be after the root route
