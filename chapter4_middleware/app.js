@@ -5,15 +5,19 @@
 
 
 const mExpress = require('express')
-const mMorgan = require('morgan')                   // 1.
+const mMorgan = require('morgan')                      // 1.
 
 
 const mApp = mExpress()
 
-mApp.use(mMorgan('dev'))                            // 2.
+//mApp.use(mMorgan('dev'))                             // 2.
 
-mApp.get("/", (req, res) => {
-    res.send("Working")
+mApp.get("/",(req, res) => {
+    res.send("Home page")
+})
+
+mApp.get("/about", mMorgan('dev'),(req, res) => {
+    res.send("About page")
 })
 
 mApp.listen(8080, () => {
