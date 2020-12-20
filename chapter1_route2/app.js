@@ -50,9 +50,22 @@ mApp.delete('/post', (req, res) => {
 
 // 5.1 for a single post // we will do this by post id/dynamic url/url param // post id will be in the URL
 mApp.get('/post/:productid', (req, res) => {                                 // here "productid" is dynamic
-    res.send("<h1>This is a single product</h1>")
+    res.send("<h1>This is a single product</h1>")                            // we will extract the "productid" and find the product from database query
 })
 
+// 5.2 extract the "productid"
+mApp.get('/getpid/:productid', (req, res) => {  
+    
+    res.send(`The post id is ${req.params.productid}`)
+       
+})
+
+// 5.3 we can even use multiple
+mApp.get('/getpid/:productid/:reviews', (req, res) => {  
+    
+    res.send(`The post id is ${req.params.reviews}`)
+       
+})
 
 
 
