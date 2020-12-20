@@ -67,6 +67,16 @@ mApp.get('/getpid/:productid/:reviews', (req, res) => {
        
 })
 
+// 6. query string                                          // Ex: ?name=ferret&color=purple
+mApp.get('/query', (req, res) => {  
+    
+    // extracting the values
+    
+    res.send('Query is: '+req.query.age)
+    
+       
+})
+
 
 
 
