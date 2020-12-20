@@ -28,17 +28,38 @@ userRouter.get('/signout', (req, res) => {
 // 3. connecting userRouter to our mApp before root ("/"), first param is group holder ("user/signin")
 mApp.use('/user', userRouter)
 
-mApp.get('/', (req, res) => {
-    res.send("<h1>Home</h1>")
-})
-
 // 4. now we use a different file for a sub route
-// 4.1 create a new file. like: adminRouter.js and make some sub routes
+// 4.1 create a new file. like: adminRouter.js and make some sub routes.
 // 4.2 is writen in the top ^
 // 4.3 making linked with mApp to adminRouter
 mApp.use('/admin', adminRouter)
 
+// 5. create, read, update and delete all post
+mApp.post('/post', (req, res) => {
+    res.send("<h1>Create</h1>")
+})
+mApp.get('/post', (req, res) => {
+    res.send("<h1>Read</h1>")
+})
+mApp.put('/post', (req, res) => {
+    res.send("<h1>Put</h1>")
+})
+mApp.delete('/post', (req, res) => {
+    res.send("<h1>Delete</h1>")
+})
 
+// 5.1 for a single post // we will do this by post id/dynamic url/url param // post id will be in the URL
+mApp.get('/post/:productid', (req, res) => {                                 // here "productid" is dynamic
+    res.send("<h1>This is a single product</h1>")
+})
+
+
+
+
+
+mApp.get('/', (req, res) => {
+    res.send("<h1>Home</h1>")
+})
 mApp.listen(8080, () => {
     console.log("I am on 8080")
 })
