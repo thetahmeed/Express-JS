@@ -69,16 +69,23 @@ mApp.get('/getpid/:productid/:reviews', (req, res) => {
 
 // 6. query string                                          // Ex: ?name=ferret&color=purple
 mApp.get('/query', (req, res) => {  
-    
     // extracting the values
-    
     res.send('Query is: '+req.query.age)
-    
-       
 })
 
+// 7. coding handler/controler in separate .js file
+// create a new .js file called "separateHandler"
+const {
+    mSeparateHandler1,
+    mSeparateHandler2,
+    mSeparateHandler3,
+    mSeparateHandler4,
+} = require('./saperateHandeler')
 
-
+mApp.get('/handler1', mSeparateHandler1)
+mApp.get('/handler2', mSeparateHandler2)
+mApp.get('/handler3', mSeparateHandler3)
+mApp.get('/handler4', mSeparateHandler4)
 
 mApp.get('/', (req, res) => {
     res.send("<h1>Home</h1>")
