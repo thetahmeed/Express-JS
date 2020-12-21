@@ -23,4 +23,6 @@ mApp.set('views', 'template/views')
 
 // 4. create a .ejs file called 'index.ejs'
 
-// 5. follow app.js for rest
+// 5. now we have 'render' our 'ejs' file as a 'response' Ex: res.render('index')
+
+// 6. follow app.js for rest
