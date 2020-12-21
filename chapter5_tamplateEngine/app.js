@@ -17,7 +17,7 @@ mApp.use(mExpress.json())
 mApp.set('view engine', 'ejs')
 
 mApp.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {title: "I am a dynamic data"})
 })
 
 const PORT = process.env.PORT || 8080
