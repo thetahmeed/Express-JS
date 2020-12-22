@@ -43,5 +43,20 @@
         <% } %> 
     </ul>
 
+        <!-- if alse + loop -->
+
+    <% if (posts.length == 0) { %> 
+        <h1>No posts available!</h1>
+    <% } else { %>
+        <ul>
+            <% for (let p of posts) { %> 
+                <li>
+                    <%= p.title %> By <%= p.author %>  
+                </li>
+            <% } %> 
+        </ul>
+    <% } %> 
+
+
 </body>
 </html>
