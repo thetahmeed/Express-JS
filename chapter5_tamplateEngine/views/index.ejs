@@ -19,6 +19,8 @@
 
     </br> </br>
 
+        <!-- if else on EJS -->
+
     <% if (post.visible) { %> 
 
         <h1>Title: <%= post.title %> </h1>
@@ -30,6 +32,16 @@
         <p>Body: PRIVARE CONTENT! </p>
 
     <% } %> 
+
+        <!-- loop in EJS -->
+
+    <ul>
+        <% for (let p of posts) { %> 
+            <li>
+                <%= p.title %> By <%= p.author %>  
+            </li>
+        <% } %> 
+    </ul>
 
 </body>
 </html>

@@ -24,7 +24,26 @@ mApp.get('/', (req, res) => {
         visible : true
     }
 
-    res.render('index', {title: "I am a dynamic data", post})
+    let posts = [
+        {
+            title: 'Post 1',
+            author: 'Tahmeed'
+        },
+        {
+            title: 'Post 2',
+            author: 'Tahmeed'
+        },
+        {
+            title: 'Post 3',
+            author: 'Tahmeed'
+        },
+        {
+            title: 'Post 4',
+            author: 'Tahmeed'
+        }
+    ]
+
+    res.render('index', {title: "I am a dynamic data", post, posts})
 })
 
 const PORT = process.env.PORT || 8080
