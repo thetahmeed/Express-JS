@@ -14,10 +14,10 @@ const {
     deleteContactById
 } = require('./contactController')
 
-mApp2.get('/', createContact)
+mApp2.post('/', createContact)
 mApp2.get('/:id', getContactById)
 mApp2.get('/', getAllContacts)
-mApp2.get('/:id', updateContactById)
-mApp2.get('/:id', deleteContactById)
+mApp2.put('/:id', updateContactById)
+mApp2.delete('/:id', deleteContactById)
 
 module.exports = mApp2
