@@ -26,3 +26,8 @@ mApp.set('views', 'template/views')
 // 5. now we have 'render' our 'ejs' file as a 'response' Ex: res.render('index')
 
 // 6. follow app.js for rest
+
+
+// FACT:
+// PARTIALS: When we move our all common static codes to a different file (views > pages > partials > )
+    and use it on multiple places.
