@@ -8,6 +8,8 @@ const mExpress = require('express')
 const mMorgan = require('morgan')
 const mMongoose = require('mongoose');
 
+const mApp2 = require('./contactRoutes')
+
 
 const mApp = mExpress();
 
@@ -15,6 +17,11 @@ const mApp = mExpress();
 mApp.use(mMorgan('dev'))
 mApp.use(mExpress.urlencoded({extended: true}))
 mApp.use(mExpress.json())
+
+
+
+
+mApp.use('/contacts', mApp2)
 
 
 mApp.get('/', (req, res) => {
