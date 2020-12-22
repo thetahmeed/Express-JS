@@ -43,7 +43,8 @@ mApp.get('/', (req, res) => {
         }
     ]
 
-    res.render('index', {title: "I am a dynamic data", post, posts})
+    // first param is the location of our EJS file, No need to add extestions
+    res.render('pages/index', {title: "I am a dynamic data", post, posts})
 })
 
 const PORT = process.env.PORT || 8080
