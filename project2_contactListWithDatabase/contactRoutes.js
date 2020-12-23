@@ -6,13 +6,7 @@
 
 const mApp2 = require('express').Router()
 
-const {
-    createContact, 
-    getContactById, 
-    getAllContacts, 
-    updateContactById, 
-    deleteContactById
-} = require('./contactController')
+const {createContact, getContactById, getAllContacts, updateContactById, deleteContactById} = require('./contactController')
 
 mApp2.post('/', createContact)
 mApp2.get('/:id', getContactById)

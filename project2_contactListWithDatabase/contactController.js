@@ -4,8 +4,24 @@
 
 
 
+const Contacts = require('./Contacts')
+
+
 exports.createContact = (req, res) => {
-    res.send('0')
+    let {name, email, phone} = req.body
+    let contact = new Contacts({name, email, phone})
+
+    contact.save()
+        .then(c => {
+                res.json(c)
+            })
+            
+        .catch(e => {
+                console.log(e)
+                res.json({
+                    error: 'Error!'
+                })
+            })
 }
 
 exports.getAllContacts = (req, res) => {

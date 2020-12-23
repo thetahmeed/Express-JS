@@ -15,12 +15,12 @@ const contactSchema = new Schema({
         minlength: 3,
         maxlength: 12                               // 'min' & 'max' for 'number' type
     },
-    phone: {
+    email: {
         type: String,
         required: true,
         trim: true
     },
-    email: {
+    phone: {
         type: String,
         required: true,
         trim: true
