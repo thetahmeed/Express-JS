@@ -8,28 +8,49 @@ const Contacts = require('./Contacts')
 
 
 exports.createContact = (req, res) => {
-    let {name, email, phone} = req.body
-    let contact = new Contacts({name, email, phone})
+    let { name, email, phone } = req.body
+    let contact = new Contacts({ name, email, phone })
 
     contact.save()
         .then(c => {
-                res.json(c)
-            })
-            
+            res.json(c)
+        })
+
         .catch(e => {
-                console.log(e)
-                res.json({
-                    error: 'Error!'
-                })
+            console.log(e)
+            res.json({
+                error: 'Error!'
             })
+        })
 }
 
 exports.getAllContacts = (req, res) => {
-    res.send('1')
+    Contacts.find()                                    // inside 'find()' we can write conditions or use 'find().where()' 
+        .then(contacts => {
+            res.json(contacts)
+        })
+        .catch(e => {
+            console.log(e)
+            res.json({
+                error: 'Error!'
+            })
+        })
 }
 
 exports.getContactById = (req, res) => {
-    res.send('2')
+    let { id } = req.params
+
+    // Contacts.findOne({_id: id}) or
+    Contacts.findById(id)
+        .then(contacts => {
+            res.json(contacts)
+        })
+        .catch(e => {
+            console.log(e)
+            res.json({
+                error: 'Error!'
+            })
+        })
 }
 
 exports.updateContactById = (req, res) => {
